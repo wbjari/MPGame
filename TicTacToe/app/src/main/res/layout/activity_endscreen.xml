@@ -33,18 +33,18 @@
             tools:ignore="UselessParent">
 
             <Button
-                android:id="@+id/buttonMainMenu"
-                android:text="Naar het hoofdmenu"
-                android:layout_height="wrap_content"
+                android:id="@+id/buttonRestart"
+                android:text="Opnieuw"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@color/accent"
                 android:layout_marginBottom="10dp" />
 
             <Button
-                android:id="@+id/buttonCloseGame"
-                android:text="Spel afsluiten"
-                android:layout_width="match_parent"
+                android:id="@+id/buttonMainMenu"
+                android:text="Naar het hoofdmenu"
                 android:layout_height="wrap_content"
+                android:layout_width="match_parent"
                 android:background="@color/accent"
                 android:layout_marginBottom="10dp" />
 
