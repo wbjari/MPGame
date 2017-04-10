@@ -123,6 +123,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         if(view.getId() == R.id.buttonLost) {
             Intent intent = new Intent(view.getContext(), EndScreenActivity.class);
             intent.putExtra("score", String.valueOf(player.score));
+            intent.putExtra("name", String.valueOf(player.name));
             startActivity(intent);
         }
     }
