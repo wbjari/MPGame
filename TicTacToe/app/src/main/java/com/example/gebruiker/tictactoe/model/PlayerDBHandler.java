@@ -67,7 +67,6 @@ public class PlayerDBHandler extends SQLiteOpenHelper {
         // Als spelernaam is gevonden
         if (cursor.moveToFirst()) {
             Log.i(TAG, "addPlayer: naam bestaat al");
-
             error = true;
         } else {
             Log.i(TAG, "addPlayer: naam bestaat nog niet");
@@ -75,6 +74,21 @@ public class PlayerDBHandler extends SQLiteOpenHelper {
         cursor.close();
 
         return error;
+    }
+
+    // Score van speler ophalen
+    public int getPlayerScore(String name) {
+
+        Cursor cursor = getReadableDatabase().rawQuery("SELECT score FROM " + DB_TABLE_NAME + " WHERE " + COLOMN_NAME + "=" + "\"" + name + "\"", null);
+        int score = 0;
+
+        // Als score
+        if (cursor.moveToFirst()) {
+            score = cursor.getInt(cursor.getColumnIndex(COLOMN_SCORE));
+        }
+        cursor.close();
+        
+        return score;
     }
 
     // Speler toevoegen aan highscores
