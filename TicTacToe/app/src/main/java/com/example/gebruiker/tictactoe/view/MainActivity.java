@@ -6,37 +6,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.example.gebruiker.tictactoe.BounceInterpolator;
 import com.example.gebruiker.tictactoe.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    // Timer starttijd (voor afwezigheid)
-    private int startTimer = 15; // in seconden
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Timer start
-        final CountDownTimer iddlecounter = new CountDownTimer(startTimer*1000, 1000) {
-            @Override
-            public void onTick(long l) {
-
-            }
-
-            public void onFinish() {
-                Log.i(TAG, "onTimerEnd: redirect -> idle activity");
-                Intent intent = new Intent(MainActivity.this, IdleActivity.class);
-                startActivity(intent);
-            }
-        }.start();
-        // Timer end
+        animateButton();
 
         // Knop die naar de prestartgame pagina gaat
         Button buttonStartGame = (Button) findViewById(R.id.buttonStartGame);
@@ -44,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Log.i(TAG, "onClick: redirect -> prestartgame activity");
-                iddlecounter.cancel();
                 Intent intent = new Intent(MainActivity.this, PregameActivity.class);
                 startActivity(intent);
             }
@@ -56,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Log.i(TAG, "onClick: redirect -> highscores activity");
-                iddlecounter.cancel();
                 Intent intent = new Intent(getBaseContext(), HighscoreActivity.class);
                 startActivity(intent);
             }
@@ -68,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Log.i(TAG, "onClick: redirect -> aboutus activity");
-                iddlecounter.cancel();
                 Intent intent = new Intent(MainActivity.this, AboutusActivity.class);
                 startActivity(intent);
             }
@@ -80,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // Sluit de app af
-                iddlecounter.cancel();
                 android.os.Process.killProcess(android.os.Process.myPid());
                 System.exit(1);
             }
@@ -102,13 +87,34 @@ public class MainActivity extends AppCompatActivity {
 //            Log.i(TAG, "onCreate: Generated player with name: " + p.name);
 //        }
 
-        // Reset timer bij interactie
-        LinearLayout rlayout = (LinearLayout) findViewById(R.id.activity_main);
-        rlayout.setOnClickListener(new View.OnClickListener() {
+    }
+
+    void animateButton() {
+        // Load the animation
+        final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        double animationDuration = 2 * 1000;
+        myAnim.setDuration((long)animationDuration);
+
+        // Use custom animation interpolator to achieve the bounce effect
+        BounceInterpolator interpolator = new BounceInterpolator(0.2, 15);
+
+        myAnim.setInterpolator(interpolator);
+
+        // Animate the button
+        Button button = (Button)findViewById(R.id.buttonStartGame);
+        button.startAnimation(myAnim);
+
+        // Run button animation again after it finished
+        myAnim.setAnimationListener(new Animation.AnimationListener(){
             @Override
-            public void onClick(View v) {
-                iddlecounter.cancel();
-                iddlecounter.start();
+            public void onAnimationStart(Animation arg0) {}
+
+            @Override
+            public void onAnimationRepeat(Animation arg0) {}
+
+            @Override
+            public void onAnimationEnd(Animation arg0) {
+                animateButton();
             }
         });
     }
