@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+
+    <string name="app_title">Tic Tac Toe</string>
+
+    <string name="startgame">Start spel</string>
+    <string name="aboutus">Over ons</string>
+    <string name="exit">Afsluiten</string>
+
+    <string name="playername">Naam speler</string>
+    <string name="computername">Computer</string>
+    <string name="figureX">X</string>
+    <string name="figureO">O</string>
+    <string name="figureRandom">X/O</string>
+
+    <string name="highscores">Highscores</string>
+    <string name="reset">Resetten</string>
+
+    <string name="info">Info</string>
+    <string name="aboutus_info">Dit spel is gemaakt in opdracht van de Informatica opleiding op Avans Hogeschool te Breda.</string>
+    <string name="madeby">Gemaakt door:</string>
+    <string name="madebyNames">Jari Verhaard &#38; Koen de Bont</string>
+</resources>

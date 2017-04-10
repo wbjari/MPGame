@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="@string/app_title"
+        android:textSize="40dp"
+        android:textColor="@color/icons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appTitle"
+        android:gravity="center_horizontal|center"
+        android:padding="20dp"
+        tools:ignore="SpUsage" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1.0"
+        android:gravity="center_horizontal|center"
+        tools:ignore="DisableBaselineAlignment">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="0dip"
+            android:layout_weight=".5"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:layout_marginBottom="15dp"
+                tools:ignore="NestedWeights">
+
+                <TextView
+                    android:text="@string/figureX"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/X"
+                    android:textSize="30dp"
+                    android:layout_weight="0.8"
+                    android:gravity="center_vertical|center_horizontal"
+                    tools:ignore="SpUsage" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:inputType="textPersonName"
+                    android:background="@color/background"
+                    android:textColor="@color/secondary_text"
+                    android:hint="@string/playername"
+                    android:ems="10"
+                    android:id="@+id/playerName"
+                    android:layout_weight="0.2"
+                    android:textSize="16dp"
+                    tools:ignore="LabelFor,NestedWeights,SpUsage"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:layout_height="40dp"
+                    android:maxLength="20" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:text="@string/figureO"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/O"
+                    android:layout_weight="0.8"
+                    android:textSize="30sp"
+                    android:gravity="center_vertical|center_horizontal" />
+
+                <TextView
+                    android:text="@string/computername"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/computerName"
+                    android:ems="10"
+                    android:paddingStart="8dp"
+                    android:textSize="16dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlSymmetry,SpUsage" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:layout_marginBottom="15dp">
+
+                <Button
+                    android:text="@string/figureRandom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/randomPregame"
+                    android:layout_weight="1"
+                    android:background="@color/accent"
+                    android:layout_marginEnd="15dp"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:text="@string/figureX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/xPregame"
+                    android:layout_weight="1"
+                    android:background="@color/primary_light"
+                    android:layout_marginEnd="15dp"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:text="@string/figureO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/oPregame"
+                    android:layout_weight="1"
+                    android:background="@color/primary_light"
+                    tools:ignore="ButtonStyle" />
+
+            </LinearLayout>
+
+            <Button
+                android:text="@string/startgame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/startGame"
+                android:layout_weight=".5"
+                android:layout_marginBottom="15dp"
+                android:background="@color/accent" />
+
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/errorMsg"
+                android:textColor="@color/accent"
+                android:layout_weight=".5"
+                android:layout_marginBottom="10dp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

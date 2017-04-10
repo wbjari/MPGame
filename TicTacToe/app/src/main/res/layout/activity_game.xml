@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Playername"
+        android:layout_width="match_parent"
+        android:id="@+id/textViewPlayerName"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="normal|bold|italic"
+        android:textAllCaps="true"
+        android:layout_height="75dp" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/buttonA1"
+        android:background="@android:color/holo_blue_light"
+        android:layout_marginRight="15dp"
+        android:layout_above="@+id/buttonB1"
+        android:layout_alignStart="@+id/buttonB1"
+        android:layout_marginBottom="15dp"
+        android:textSize="50sp"
+        android:textStyle="normal|bold" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/buttonA2"
+        android:background="@android:color/holo_blue_light"
+        android:layout_above="@+id/buttonB2"
+        android:layout_toEndOf="@+id/buttonA1"
+        android:layout_marginBottom="15dp"
+        android:textSize="50sp"
+        android:textStyle="normal|bold" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/buttonA3"
+        android:background="@android:color/holo_blue_light"
+        android:layout_alignBottom="@+id/buttonA2"
+        android:layout_alignStart="@+id/buttonB3"
+        android:textSize="50sp"
+        android:textStyle="normal|bold" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/buttonB2"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_blue_light"
+        android:textSize="50sp"
+        android:textStyle="normal|bold" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/buttonB3"
+        android:background="@android:color/holo_blue_light"
+        android:layout_above="@+id/buttonC3"
+        android:layout_alignStart="@+id/buttonC3"
+        android:textSize="50sp"
+        android:textStyle="normal|bold" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/buttonC1"
+        android:background="@android:color/holo_blue_light"
+        android:layout_below="@+id/buttonB2"
+        android:layout_toStartOf="@+id/buttonC2"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:textSize="50sp"
+        android:textStyle="normal|bold" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/buttonC2"
+        android:background="@android:color/holo_blue_light"
+        android:layout_below="@+id/buttonB2"
+        android:layout_alignStart="@+id/buttonB2"
+        android:layout_marginTop="15dp"
+        android:textSize="50sp"
+        android:textStyle="normal|bold" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/buttonC3"
+        android:background="@android:color/holo_blue_light"
+        android:layout_below="@+id/buttonB2"
+        android:layout_toEndOf="@+id/buttonC2"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="50sp"
+        android:textStyle="normal|bold" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/buttonB1"
+        android:background="@android:color/holo_blue_light"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/buttonA2"
+        android:layout_alignStart="@+id/buttonC1"
+        android:textSize="50sp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:text="Timer: 00:00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTimer"
+        android:textSize="36sp"
+        android:layout_marginBottom="19dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Score: 0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewScore"
+        android:textSize="36sp"
+        android:layout_above="@+id/textViewTimer"
+        android:layout_alignStart="@+id/textViewTimer" />
+
+    <Button
+        android:text="Volgende"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonNextGame"
+        android:visibility="invisible"
+        android:layout_below="@+id/textViewPlayerName"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

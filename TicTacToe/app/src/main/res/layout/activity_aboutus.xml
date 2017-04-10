@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:weightSum="1.0">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:weightSum="1.0">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            tools:ignore="ContentDescription,InefficientWeight"
+            android:src="@drawable/tictactoe_icon"
+            android:paddingBottom="10dp"
+            android:paddingTop="40dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:text="@string/app_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:textSize="30dp"
+            android:gravity="fill_vertical|center_horizontal|center"
+            android:paddingBottom="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:layout_weight="0.5"
+        android:padding="20dp">
+
+
+        <TextView
+            android:id="@+id/aboutUsInfoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/info"
+            android:textSize="20dp"
+            android:textColor="@color/primary_text"
+             />
+
+        <TextView
+            android:id="@+id/aboutUsInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/aboutus_info"
+            android:textSize="14dp"
+            android:textColor="@color/primary_text"
+             />
+
+        <TextView
+            android:id="@+id/aboutUsMadeByTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/madeby"
+            android:textSize="20dp"
+            android:textColor="@color/primary_text"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/AboutUsMadeByNames"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/madebyNames"
+            android:textSize="14dp"
+            android:textColor="@color/primary_text"
+             />
+    </LinearLayout>
+</LinearLayout>
