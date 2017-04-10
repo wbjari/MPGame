@@ -20,6 +20,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static android.R.color.holo_blue_light;
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 /**
  * Created by wbjar on 16-1-2017.
@@ -28,7 +29,7 @@ import static android.R.color.holo_blue_light;
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button a1, a2, a3, b1, b2, b3, c1, c2, c3;
-    private Button buttonNextGame;
+    private Button buttonNextGame, buttonLost;
     private Button[] buttonArray;
     private Boolean turn = true; // If true, turn = X. If false, turn = O.
     private int turnCount = 0;
@@ -80,6 +81,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         textViewPlayerName.setText(player.name);
 
         buttonNextGame = (Button) findViewById(R.id.buttonNextGame);
+        buttonLost = (Button) findViewById(R.id.buttonLost);
         textViewScore = (TextView) findViewById(R.id.textViewScore);
 
         // Link buttons to buttons in layout.
@@ -110,12 +112,18 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         if(view.getId() == R.id.buttonNextGame) {
             buttonNextGame.setVisibility(View.INVISIBLE);
             clearPlayField();
-//            if(!turn) {
+            if(!turn) {
                 performComputerTurn();
-//            }
+            }
         } else {
             Button button = (Button) view;
             buttonClicked(button);
+        }
+
+        if(view.getId() == R.id.buttonLost) {
+            Intent intent = new Intent(view.getContext(), EndScreenActivity.class);
+            intent.putExtra("score", String.valueOf(player.score));
+            startActivity(intent);
         }
     }
 
@@ -299,6 +307,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         gamecounter.cancel();
         buttonNextGame.setVisibility(View.INVISIBLE);
 
+        for (Button button : buttonArray) {
+            button.setClickable(false);
+        }
+
+        buttonLost.setVisibility(View.VISIBLE);
+        buttonLost.setOnClickListener(this);
+
 
         // Voeg speler toe aan highscores
         PlayerDBHandler pdb = new PlayerDBHandler(getApplicationContext());
@@ -322,6 +337,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         for (Button button : buttonArray) {
             button.setClickable(false);
         }
+
     }
 
     public void setScore(int score) {

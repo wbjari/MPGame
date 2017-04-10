@@ -36,6 +36,13 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme"></activity>
 
+<<<<<<< HEAD
+=======
+        <activity
+            android:name=".view.EndScreenActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme"></activity>
+>>>>>>> origin/master
     </application>
 
 </manifest>

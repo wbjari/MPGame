@@ -104,35 +104,6 @@
                 android:layout_weight=".5"
                 android:layout_marginBottom="15dp">
 
-                <Button
-                    android:text="@string/figureRandom"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/randomPregame"
-                    android:layout_weight="1"
-                    android:background="@color/accent"
-                    android:layout_marginEnd="15dp"
-                    tools:ignore="ButtonStyle" />
-
-                <Button
-                    android:text="@string/figureX"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/xPregame"
-                    android:layout_weight="1"
-                    android:background="@color/primary_light"
-                    android:layout_marginEnd="15dp"
-                    tools:ignore="ButtonStyle" />
-
-                <Button
-                    android:text="@string/figureO"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/oPregame"
-                    android:layout_weight="1"
-                    android:background="@color/primary_light"
-                    tools:ignore="ButtonStyle" />
-
             </LinearLayout>
 
             <Button

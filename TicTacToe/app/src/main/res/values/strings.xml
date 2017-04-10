@@ -8,7 +8,7 @@
     <string name="exit">Afsluiten</string>
 
     <string name="playername">Naam speler</string>
-    <string name="computername">Computer</string>
+    <string name="computername">Gast</string>
     <string name="figureX">X</string>
     <string name="figureO">O</string>
     <string name="figureRandom">X/O</string>
