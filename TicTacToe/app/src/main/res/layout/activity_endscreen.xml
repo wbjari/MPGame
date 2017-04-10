@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_endscreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="Uw score: 0"
+        android:textSize="40dp"
+        android:textColor="@color/icons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewScore"
+        android:gravity="center_horizontal|center"
+        android:padding="20dp"
+        tools:ignore="SpUsage" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1.0"
+        android:gravity="center_horizontal|center"
+        tools:ignore="DisableBaselineAlignment">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="0dip"
+            android:layout_weight=".5"
+            tools:ignore="UselessParent">
+
+            <Button
+                android:id="@+id/buttonMainMenu"
+                android:text="Naar het hoofdmenu"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="@color/accent"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/buttonCloseGame"
+                android:text="Spel afsluiten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/accent"
+                android:layout_marginBottom="10dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
