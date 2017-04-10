@@ -23,17 +23,18 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:weightSum="1.0"
         android:gravity="center_horizontal|center"
+        android:clipChildren="false"
         tools:ignore="DisableBaselineAlignment">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:weightSum="1.0"
-            android:padding="20dp"
-            tools:ignore="UselessParent">
+            android:layout_weight=".6"
+            tools:ignore="InefficientWeight,UselessParent"
+            android:clipChildren="false">
 
             <Button
                 android:id="@+id/buttonStartGame"
@@ -41,9 +42,13 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:background="@color/accent"
-                android:layout_weight=".6"
-                android:layout_marginBottom="10dp"
-                android:elevation="0dp" />
+                android:layout_weight=".5"
+                tools:ignore="NestedWeights"
+                android:layout_marginBottom="15dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginStart="60dp" />
 
             <Button
                 android:id="@+id/buttonHighscores"
@@ -51,8 +56,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/accent"
-                android:layout_weight=".6"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="15dp"
+                android:layout_weight=".5"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp" />
 
             <Button
                 android:id="@+id/buttonAboutUs"
@@ -60,8 +67,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/accent"
-                android:layout_weight=".6"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp" />
 
             <Button
                 android:id="@+id/closeApplication"
@@ -69,8 +77,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/accent"
-                android:layout_weight=".6"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp" />
         </LinearLayout>
 
     </LinearLayout>

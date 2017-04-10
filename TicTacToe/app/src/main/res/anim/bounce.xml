@@ -8,6 +8,8 @@
         android:fromYScale="0.3"
         android:toYScale="1.0"
         android:pivotX="50%"
-        android:pivotY="50%" />
+        android:pivotY="50%"
+        android:clipChildren="false"
+        android:clipToPadding="false" />
 
 </set>
