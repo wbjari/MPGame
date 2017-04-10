@@ -110,9 +110,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         if(view.getId() == R.id.buttonNextGame) {
             buttonNextGame.setVisibility(View.INVISIBLE);
             clearPlayField();
-//            if(!turn) {
+            if(!turn) {
                 performComputerTurn();
-//            }
+            }
         } else {
             Button button = (Button) view;
             buttonClicked(button);
